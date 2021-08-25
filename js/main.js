@@ -9,7 +9,7 @@
       this.TILE_SIZE = 70;
       this.img = document.createElement('img');
 	    // this.img.src = 'img/yuna.png';
-  	  this.img.src = 'img/Cocoyuna.png';
+  	  this.img.src = 'img/cocoyuna.png';
       this.img.addEventListener('load', () => {
         this.render();
       });
