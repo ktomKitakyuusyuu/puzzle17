@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <title>CocoYunaPuzzle</title>
+  <style>
+    canvas{
+      background: pink;
+      display: block;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+    p{
+      display: block;
+      width: 280;
+      background-color: slategray
+    }
+    section{
+      background: tomato;
+      width: 280px;
+      margin: 4px auto;
+      text-align: center;
+    }
+    input{
+      width: 260px;
+    }
+
+    button{
+      width: 132px;
+    }
+
+    div{
+      width: 280px;
+      background: tomato;
+      color: white;
+      margin: 4px auto;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    CocoYuna Pazzule 2021.08.25 版
+  </div>
+  <canvas width="280" height="280">
+    Coco Yuna 2021.08.
+  </canvas>
+  <section>
+    <!-- <input type="text" id="shaffle" value='0,1,2,3,4,5,6,7,8,9,15,10,11,12,13,14'> -->
+    <input type="text" id="shaffle" placeholder='0,1,2,3...'>
+    <button id='get'>get 記憶</button>
+    <button id='set'>set 再現</button>
+    <!-- <div>GET現在配置を表示、SETで配置</div> -->
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
