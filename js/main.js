@@ -39,6 +39,7 @@
         this.puzzle.setPuzzle(nums);
         this.render();
         this.shaffle.classList.add('setInput');
+        this.shaffle.disabled=true;
       });
       // 現在の状態をstausへ書き込む
       this.getBtn.addEventListener('click',e=>{
@@ -50,6 +51,7 @@
         }
         this.shaffle.value =buf;
         this.shaffle.classList.remove('setInput');
+        this.shaffle.disabled=false;
       });
     }
 
