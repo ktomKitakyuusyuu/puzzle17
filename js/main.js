@@ -31,15 +31,16 @@
       });
       this.setBtn=document.getElementById('set');
       this.setBtn.addEventListener('click',e=>{
-        const numstr=document.getElementById('shaffle').value;
-        const nums=numstr.split(',');
+        const numstr=document.getElementById('shaffle');
+        const nums=numstr.value.split(',');
         this.puzzle.setPuzzle(nums);
         this.render();
+        numstr.classList.add('setInput');
       });
       // 現在の状態をstausへ書き込む
       this.getBtn=document.getElementById('get');
       this.getBtn.addEventListener('click',e=>{
-        const status=document.getElementById('shaffle');
+      const status=document.getElementById('shaffle');
         let buf='';
         for (let row=0;row<4;row++){
           for (let col=0;col<4;col++){
@@ -47,6 +48,7 @@
           }
         }
         status.value =buf;
+        status.classList.remove('setInput');
       });
 
     }
@@ -57,6 +59,10 @@
       this.ctx.font = '28px Arial';
       this.ctx.fillStyle = '#fff';
       this.ctx.fillText('GAME CLEAR!!', 40, 150);
+
+      this.setBtn.disabled=true;
+      this.getBtn.disabled=true;
+
     }
 
     render() {
