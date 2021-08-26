@@ -10,6 +10,10 @@
       this.img = document.createElement('img');
 	    // this.img.src = 'img/yuna.png';
   	  this.img.src = 'img/cocoyuna.png';
+      this.setBtn=document.getElementById('set');
+      this.getBtn=document.getElementById('get');
+      this.shaffle=document.getElementById('shaffle');
+
       this.img.addEventListener('load', () => {
         this.render();
       });
@@ -29,28 +33,24 @@
           this.renderGameClear();
         }
       });
-      this.setBtn=document.getElementById('set');
+
       this.setBtn.addEventListener('click',e=>{
-        const numstr=document.getElementById('shaffle');
-        const nums=numstr.value.split(',');
+        const nums=shaffle.value.split(',');
         this.puzzle.setPuzzle(nums);
         this.render();
-        numstr.classList.add('setInput');
+        this.shaffle.classList.add('setInput');
       });
       // 現在の状態をstausへ書き込む
-      this.getBtn=document.getElementById('get');
       this.getBtn.addEventListener('click',e=>{
-      const status=document.getElementById('shaffle');
         let buf='';
         for (let row=0;row<4;row++){
           for (let col=0;col<4;col++){
               buf=buf+this.puzzle.tiles[row][col]+',';
           }
         }
-        status.value =buf;
-        status.classList.remove('setInput');
+        this.shaffle.value =buf;
+        this.shaffle.classList.remove('setInput');
       });
-
     }
 
     renderGameClear() {
